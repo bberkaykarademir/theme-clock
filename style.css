@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(39, 38, 39);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.clock {
+  width: 666px;
+  height: 666px;
+  border: 11px rgb(252, 57, 6) solid;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAP1BMVEX///+fn5+ZmZmWlpbo6Ojv7+++vr6cnJzCwsLz8/OioqK4uLimpqbOzs7U1NTX19fh4eGrq6uxsbHJycn4+PiKp00FAAACEUlEQVR4nO3d246jMAyAYewADueW6fs/66Zd7dWq7aTCE4X5v3vkmEAEiuU0DQAAADJ1fey70oNw1QYLbelBuGpVlAzr9gsyPP17eP61FADwv+i/9A/RPcRzm+nuHmRX29yDPHM10YtzjIuKzc4xnhuCyOgcYxYJBb+CYprExTXCmqawd43wRsrQdxLH9DNyc43wxhZ8p7BpFvcIb/jf36IzCAAAAAAAAAAAgCNsc031Z928Zl8jFvpaNrZufTDLvSiqiDnvYB9lURPR3L3wYU8pShhchnSsW0gj1T1/qJdZ9cthQMdbVefPil5WOXgoXsb8ZQYAAAAAAAAAAAAAAAAAgGSY5qlcvWPX3rlWBg/BzHxLOl9l0QdVDa5NmSYTEZs8Q7zKIj7Cu/Z/mx8hXJuTvcri/HN4/vfwJ5RdSwEAAAAAAAAAAAAAAAAAVVuy+7oWIp91kr2MtfQvXVTH/P6lXT09aIe/PWhzCy4ffYStjs6nq937CGcXN4uFkgdi54kf9IJutmsNT+g/w7Xc2d0AAAAAAAAAAAA4iP8GVeEtsDV4b4R/hbLHvZqo71Geo4qWPLQ3pgx9b/GqYq6tq1671wiMzjFmkVCu69M1TeFnx9R+Xxuc25+9tInu7kEmlZJ79NH/ARrqKQkBAByj62Nf7gvlJ7TBQlt6EK7a9KtAhnX7BRme/j08/1oKAADg4g+cdwomDbU6oQAAAABJRU5ErkJggg==);
+  background-size: cover;
+}
+
+.hour {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hour::before {
+  content: "";
+  height: 33%;
+  width: 20px;
+  position: absolute;
+  background-color: black;
+  left: calc(50% - 10px);
+  top: 50%;
+  border-radius: 10px;
+  transform-origin: top;
+  transform: rotate(180deg);
+}
+
+.minute {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.minute::before {
+  content: "";
+  height: 45%;
+  width: 16px;
+  position: absolute;
+  background-color: black;
+  left: calc(50% - 8px);
+  top: 50%;
+  border-radius: 10px;
+  transform-origin: top;
+  transform: rotate(180deg);
+}
+
+.second {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.second::before {
+  content: "";
+  height: 41%;
+  width: 11px;
+  position: absolute;
+  background-color: red;
+  left: calc(50% - 5px);
+  top: 50%;
+  border-radius: 10px;
+  transform-origin: top;
+  transform: rotate(180deg);
+}
+
+.needle {
+  position: absolute;
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 4;
+}
